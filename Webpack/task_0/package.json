@@ -1,9 +1,10 @@
 {
   "name": "webpack",
   "version": "1.0.0",
-  "description": "This project focuses on setting up and configuring Webpack for a basic web development environment.",
+  "description": "Basic configuring Webpack project.",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
