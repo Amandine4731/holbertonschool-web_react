@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import $ from "jquery";
 
 
 $(document).ready(function (){
