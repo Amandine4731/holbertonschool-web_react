@@ -2,7 +2,7 @@ import $ from "jquery";
 
 
 $(document).ready(function (){
-    $('body').append('<p>Holberton Dashboard</p>');
-    $('body').append('<p>Dashboard data for the students</p>');
-    $('body').append('<p>Copyright - Holberton School</p>');
+    $("<p>Holberton Dashboard</p>").appendTo(document.body);
+    $("<p>Dashboard data for the students</p>").appendTo(document.body);
+    $("<p>Copyright - Holberton School</p>").appendTo(document.body);
 })
