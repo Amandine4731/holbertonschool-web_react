@@ -4,8 +4,8 @@
   "description": "Basic configuring Webpack project.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "Amandine",
@@ -15,8 +15,6 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "build": "^0.1.4",
-    "jquery": "^3.7.1",
-    "lodash": "^4.17.21"
+    "jquery": "^3.7.1"
   }
 }
