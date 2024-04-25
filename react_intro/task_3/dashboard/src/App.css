@@ -1,0 +1,71 @@
+.App {
+  text-align: left;
+}
+
+.App-logo {
+  height: 25vmin;
+  pointer-events: none;
+}
+
+
+.App-header {
+  background-color: white;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+}
+
+
+.App-header h1 {
+  color: #E0354B;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  
+}
+
+hr {
+  height: 2px;
+  background-color: #E0354B;
+}
+
+
+.App-body {
+  min-height: 50vh;
+  margin: 50px;
+}
+
+
+.App-body p {
+  color: black;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+
+.App-footer p {
+  color: black;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-style: italic;
+  margin: 15px;
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#email, #password {
+  margin-right: 20px;
+}
