@@ -1,10 +1,14 @@
-function component() {
-    const element = document.createElement('div');
-  
-    // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  
-    return element;
-  }
-  
-  document.body.appendChild(component());
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App/App';
+import Notifications from './Notifications/Notifications';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <div id="root-notifications">
+      <Notifications />
+    </div>
+    <App />
+  </React.StrictMode>
+);
