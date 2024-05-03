@@ -1,14 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App/App';
-import Notifications from './Notifications/Notifications';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import "./App.scss";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <div id="root-notifications">
-      <Notifications />
-    </div>
-    <App />
-  </React.StrictMode>
-);
+const el = document.getElementById("app");
+
+ReactDOM.render(<App />, el);
