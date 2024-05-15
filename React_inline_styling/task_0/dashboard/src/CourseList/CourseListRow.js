@@ -1,39 +1,37 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './CourseList.css';
+import React from "react";
+import propTypes from 'prop-types';
 
-CourseListRow.propTypes = {
-  isHeader: PropTypes.bool,
-  textFirstCell: PropTypes.string.isRequired,
-  textSecondCell: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-}
+export function CourseListRow({isHeader = false, textFirstCell, textSecondCell = null}){
+        
+    CourseListRow.propTypes = {
+        isHeader: propTypes.bool,
+        textFirstCell: propTypes.string.isRequired,
+        textSecondCell: propTypes.string || propTypes.number,
+    }
 
-function CourseListRow({ isHeader = false, textFirstCell, textSecondCell }) {
-  const rowStyle = {
-    backgroundColor: isHeader ? '#deb5b545' : '#f5f5f5ab'
-  };
+    const rowStyle = {
+        backgroundColor: isHeader ? '#deb5b545' : '#f5f5f5ab'
+    };
 
-  if (isHeader) {
-    return (
-      <tr style={rowStyle}>
-        {textSecondCell ? (
-          <>
-            <th className='CourseListRow'>{textFirstCell}</th>
-            <th className='CourseListRow'>{textSecondCell}</th>
-          </>
-        ) : (
-          <th className='CourseListRow_title' colSpan="2">{textFirstCell}</th>
-        )}
-      </tr>
-    );
-  } else {
-    return (
-      <tr style={rowStyle}>
-        <td>{textFirstCell}</td>
-        <td>{textSecondCell}</td>
-      </tr>
-    );
-  }
-}
+    if(isHeader == true){
+        if(textSecondCell == null){
+            return(<tr style={{rowStyle}}><th className="hColSpan2" colSpan={2}>{textFirstCell}</th></tr>)
+        } else {
+            return(
+                <tr style={rowStyle}>                    
+                    <th>{textFirstCell}</th>
+                    <th>{textSecondCell}</th>
+                </tr>
+            )
+        }
+    } else {
+        return(
+            <tr style={rowStyle}>
+                <td>{textFirstCell}</td>
+                <td>{textSecondCell}</td>
+            </tr>
+        )
+    };
+};
 
-export default CourseListRow;
+export default CourseListRow

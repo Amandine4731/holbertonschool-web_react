@@ -1,39 +1,36 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import CourseListRow from './CourseListRow';
-import CourseShape from './CourseShape';
-import './CourseList.css';
+import React from "react";
+import CourseListRow from "./CourseListRow";
+import "./CourseList.css"
+import CourseShape from "./CourseShape";
+import propTypes from "prop-types"
 
-CourseList.defaultProps = {
-    listCourses: [],
-}
+export function CourseList({listCourses}){
 
-function CourseList({ isLoggedIn, listCourses }) {
     CourseList.propTypes = {
-        isLoggedIn: PropTypes.bool.isRequired,
-        listCourses: PropTypes.arrayOf(CourseShape),
+        listCourses: propTypes.arrayOf(propTypes.shape(CourseShape))
+    };
+    
+    CourseList.defaultProps = {
+        listCourses: []
     };
 
-    return (
+    return(
         <table id="CourseList">
-            <thead >
-                <CourseListRow textFirstCell="Available courses" isHeader={true} />
-                <CourseListRow textFirstCell="Course name" textSecondCell="Credit" isHeader={true} />
+            <thead>
+                <CourseListRow isHeader={true} textFirstCell="Available courses"/>
+                <CourseListRow isHeader={true} textFirstCell="Course name" textSecondCell="Credit"/>
             </thead>
             <tbody>
-                {listCourses && listCourses.length > 0 ? (listCourses.map((course, index) => (
-                    <CourseListRow
-                    key={index}
-                    textFirstCell={course.name}
-                    textSecondCell={course.credit.toString()} />
-
-                ))
+                {listCourses && listCourses.length !== 0 ? (
+                    listCourses.map(course => (
+                        <CourseListRow key={course.id} isHeader={false} textFirstCell={course.name} textSecondCell={course.credit}/>
+                    ))
                 ) : (
-                    < CourseListRow textFirstCell="No course available yet" />
+                    <CourseListRow isHeader={false} textFirstCell="No course available yet" />
                 )}
             </tbody>
         </table>
-    );
+    )
 };
 
 export default CourseList;

@@ -5,9 +5,6 @@ import WithLogging from './WithLogging';
 console.log = jest.fn();
 
 describe('WithLogging HOC', () => {
-  afterEach(() => {
-    console.log.mockClear();
-  });
 
   it('logs on mount and unmount with the component name', () => {
     const Login = () => <div>Login Component</div>;
@@ -17,5 +14,6 @@ describe('WithLogging HOC', () => {
     expect(console.log).toHaveBeenCalledWith('Component Login is mounted');
     wrapper.unmount();
     expect(console.log).toHaveBeenCalledWith('Component Login is going to unmount');
+    console.log.mockClear();
   });
 });

@@ -1,19 +1,17 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import CourseList from './CourseList';
+import React from "react";
+import CourseList from "./CourseList";
+import { shallow } from "enzyme";
+import CourseListRow from "./CourseListRow";
 
-describe('<CourseList />', () => {
-  const wrapper = shallow(<CourseList />);
-  it('renders without crashing', () => {
-    expect(wrapper.exists());
-  });
+describe('Composant CourseList', function(){
 
-  it('renders rows', () => {
-    const row = wrapper.find('CourseListRow');
-    expect(row.at(0).prop('textFirstCell')).toEqual('Available courses');
-    expect(row.at(0).prop('isHeader')).toEqual(true);
-    expect(row.at(1).prop('textFirstCell')).toEqual('Course name');
-    expect(row.at(1).prop('textSecondCell')).toEqual('Credit');
-    expect(row.at(1).prop('isHeader')).toEqual(true);
-  });
-});
+    const wrapper = shallow(<CourseList />) 
+    
+    it('should no crashing', function(){
+        expect(wrapper.exists()).toBeTruthy();
+    })
+
+    it('should  renders the 5 different rows', function(){
+        expect(wrapper.find(CourseListRow).length).toEqual(3)
+    })
+})
